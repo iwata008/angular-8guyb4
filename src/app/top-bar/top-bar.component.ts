@@ -10,7 +10,10 @@ export class TopBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
+  this.route.paramMap.subscribe(params => {
+    this.product = products[+params.get('productId')];
+  });
+}
 
 }
 
